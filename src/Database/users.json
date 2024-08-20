@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "name": "John Doe",
+        "age": 34,
+        "friends": ["3", "4"]
+    },
+    {
+        "id": "2",
+        "name": "Mary Sue",
+        "age": 22,
+        "friends": ["3","1"]
+    },
+    {
+        "id": "3",
+        "name": "Gary Stu",
+        "age": 25,
+        "friends": ["2"]
+    },
+    {
+        "id": "4",
+        "name": "Some One",
+        "age": 67,
+        "friends": ["2","3", "5"]
+    },
+    {
+        "id": "5",
+        "name": "The other",
+        "age": 50,
+        "friends": ["1"]
+    }
+]
