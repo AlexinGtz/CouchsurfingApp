@@ -13,13 +13,19 @@ export const getUserRelationship = (req: Request, res: Response) => {
     const userData: user = db.find(startingUser);
     let userDistance = 1;
     let currentFriends = userData.friends;
+    const alreadyChecked = [];
 
     
     while(!compareFriends(currentFriends, finalUser)) {
         const newFriendData = currentFriends.map((frnd) => db.find(frnd))
 
-        currentFriends = newFriendData.flatMap((usr) => usr.friends);
+        const unfilteredFriends = newFriendData.flatMap((usr) => usr.friends);
 
+        const filteredFriends = unfilteredFriends.filter((frnd) => !alreadyChecked.includes(frnd))
+
+        alreadyChecked.push(...currentFriends);
+        console.log('alreadyChecked', alreadyChecked);
+        currentFriends = Array.from(new Set((filteredFriends)));
         userDistance += 1;
     }
     
